@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+// Global variables.
+// ==========================================================
+$spImageScale: 1;
+$pcImageScale: 0.5;
+
+:root {
+  --screen-height:100vh;
+}
+
+// media query
+// ==========================================================
+// For iPhoneX Support.
+@mixin mq-sp {
+  @media screen and (max-width: 812px) {
+    @content;
+  }
+}
+
+@mixin mq-land {
+  @media screen and (orientation: landscape) and (max-width: 812px) {
+    @content;
+  }
+}
+
+@mixin mq-iPhone5 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+// For iPhoneX Support.
+@mixin mq-pc {
+  @media screen and (min-width: 813px) {
+    @content;
+  }
+}
+
+@mixin mq-pc-min {
+   @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin mq-tab {
+  @media screen and (min-width: 768px) and (max-width: 1167px) {
+    @content;
+  }
+}
+
+
+
+
+// other
+// ==========================================================
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// SP fontsize.
+////////////////////////////////////////////////////////////////////////////////////////////
+$sp-font-size-15: 2vw;
+$sp-font-size-16: 2.1333vw;
+$sp-font-size-17: 2.2666vw;
+$sp-font-size-18: 2.4vw;
+$sp-font-size-19: 2.5333vw;
+$sp-font-size-20: 2.6666vw;
+$sp-font-size-21: 2.8vw;
+$sp-font-size-22: 2.9333vw;
+$sp-font-size-23: 3.0666vw;
+$sp-font-size-24: 3.2vw;
+$sp-font-size-25: 3.3333vw;
+$sp-font-size-26: 3.4666vw;
+$sp-font-size-27: 3.6vw;
+$sp-font-size-28: 3.7333vw;
+$sp-font-size-29: 3.8666vw;
+$sp-font-size-30: 4vw;
+$sp-font-size-31: 4.133vw;
+$sp-font-size-32: 4.266vw;
+$sp-font-size-33: 4.4vw;
+$sp-font-size-34: 4.5333vw;
+$sp-font-size-35: 4.666vw;
+$sp-font-size-36: 4.8vw;
+$sp-font-size-37: 4.9333vw;
+$sp-font-size-38: 5.0666vw;
+$sp-font-size-39: 5.2vw;
+$sp-font-size-40: 5.3333vw;
+$sp-font-size-41: 5.4666vw;
+$sp-font-size-42: 5.6vw;
+$sp-font-size-43: 5.7333vw;
+$sp-font-size-44: 5.8666vw;
+$sp-font-size-45: 6vw;
+$sp-font-size-46: 6.133vw;
+$sp-font-size-47: 6.266vw;
+$sp-font-size-48: 6.4vw;
+$sp-font-size-49: 6.5333vw;
+$sp-font-size-50: 6.666vw;
+$sp-font-size-51: 6.8vw;
+$sp-font-size-52: 6.9333vw;
+$sp-font-size-53: 7.0666vw;
+$sp-font-size-54: 7.2vw;
+$sp-font-size-55: 7.333vw;
+
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function pxToVw($pxValue) {
+  @return ((strip-unit($pxValue) / 750) * 100) + vw;
+}
+
+@mixin img-bg($url, $background-width, $background-height: auto, $width: 100%, $height: "") {
+
+  $tmpHeight: $background-height;
+
+  background-image: url($url);
+  @if ($background-width != $background-height) {
+    $tmpWidth  : $background-width * $pcImageScale;
+    $tmpHeight : $background-height * $pcImageScale;
+    background-size: $tmpWidth $tmpHeight;
+  } @else {
+    $tmpWidth  : $background-width * $pcImageScale;
+    background-size: $tmpWidth;
+  }
+
+  @if ($height == "") {
+    $height: $tmpHeight;
+  }@else{
+    $height: $height * $pcImageScale;
+  }
+
+  @if($width != 100%) {
+    $width  : $width * $pcImageScale;
+  }
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: $width;
+  height: $height;
+  display: block;
+  position: relative;
+
+}
+
+@mixin img-bg-sp($url, $background-width, $background-height: auto, $width: 100%, $height: "") {
+
+  $tmpWidth: $background-width;
+  $tmpHeight: $background-height;
+
+  background-image: url($url);
+  @if ($background-width != $background-height) {
+    $tmpWidth  : strip-unit($background-width) * $spImageScale;
+    $tmpHeight : strip-unit($background-height) * $spImageScale;
+    background-size: pxToVw($tmpWidth) pxToVw($tmpHeight);
+  } @else {
+    $tmpWidth  : strip-unit($background-width) * $spImageScale;
+    background-size: pxToVw($tmpWidth);
+  }
+  @if ($height == "") {
+    $height: pxToVw($tmpHeight);
+  }@else{
+    $height: pxToVw($height * $spImageScale);
+  }
+
+  @if($width != 100%) {
+    $width: pxToVw($width * $spImageScale);
+  }
+  //
+  //$height: $tmpHeight;
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: $width;
+  height: $height;
+  display: block;
+  position: relative;
+
+}
+
+
+@mixin hide-text() {
+
+  $width: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: $width;
+}
+
+@mixin default-text-shadow {
+  text-shadow: black 1px 1px 10px, black -1px 1px 10px, black 1px -1px 10px, black -1px -1px 10px;
+}
+
+
+@mixin marginfix( $before: true, $after: false ) {
+  @if ($before == true) {
+    &::before {
+      content: " ";
+      display: block;
+      clear: both;
+      width: 100%;
+      height: 0;
+      margin-bottom: -1px;
+      border-top: transparent solid 1px;
+    }
+  }
+
+  @if ($after == true) {
+    &::after {
+      content: " ";
+      display: block;
+      clear: both;
+      width: 100%;
+      height: 0;
+      margin-bottom: -1px;
+      border-top: transparent solid 1px;
+    }
+  }
+}
+
+
+
+@import "keyframe-animations";

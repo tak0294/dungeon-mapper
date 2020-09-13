@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+/* ----------------------------------------------------------------------------------------
+
+	reset
+
+---------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------------
+ Normailze styles
+ Adapted from Normalize.css http://github.com/necolas/
+--------------------------------------------------- */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, nav, section, summary {
+	display: block;
+}
+
+audio, canvas, video {
+	display: inline-block;
+}
+
+html.no-cssanimations audio, html.no-cssanimations canvas, html.no-cssanimations video {
+	display: inline;
+	zoom: 1;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+pre, code, kbd, samp {
+	font-family: monospace, serif;
+}
+
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+q {
+	quotes: none;
+}
+
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+sub, sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+nav ul, nav ol {
+	list-style: none;
+	list-style-image: none;
+}
+
+img {
+	/*max-width: 100%;*/
+	height: auto;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: bottom;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+caption, th, td {
+	text-align: left;
+}
+
+button, input, select, textarea {
+	margin: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+button, input {
+	line-height: normal;
+}
+
+html.no-postmessage button, html.no-postmessage input {
+	overflow: visible;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+button {
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+::-webkit-input-placeholder {
+  color: #222;
+  opacity: 1;
+}
+*::-moz-placeholder {
+  color: #222;
+  opacity: 1;
+}
+:placeholder-shown {
+  color: #222;
+  opacity: 1;
+}
+
+
+/* Resetting default margin and padding
+-------------------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+object, iframe, pre, code, p, blockquote, form, fieldset, legend,
+table, th, td, caption, tbody, tfoot, thead, figure {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+    font-weight: normal;
+	line-height: 1.2;
+}
+
+ul {
+	list-style: none;
+	list-style-image: none;
+}
+
+em {
+	font-style: normal;
+}
+
+small {
+	font-size: 100%;
+}
+
+label {
+	cursor: pointer;
+}
+
+textarea {
+	overflow: auto;
+}
+
+legend {
+	display: none;
+}
+
+fieldset {
+	border: none;
+}
+
+input, textarea, select, label {
+	font-family: inherit;
+}
+
+object {
+	vertical-align: middle;
+	outline: none;
+}
+
+abbr, acronym {
+	border: none;
+	font-variant: normal;
+}
+
+address, caption, cite, code, dfn, var {
+	font-weight: normal;
+	font-style: normal;
+}
+
+hr {
+	display: none;
+}
+
+html.no-postmessage body, html.no-postmessage br {
+	letter-spacing: 0;
+}
+html.no-postmessage div {
+	zoom: 1;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

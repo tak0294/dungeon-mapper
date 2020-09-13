@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+/*********************************************************************
+ * Hover Scale系.
+ *********************************************************************/
+ @mixin bounce-hover {
+  animation: hover-scale 0.8s ease-out;
+  opacity:1;
+}
+
+@mixin bounce-hover-small {
+  animation: hover-scale-small 0.8s ease-out;
+  opacity:1;
+}
+
+@keyframes hover-scale {
+  0%, 50%, 70% {
+    transform: scale(1, 1) translate(0, 0)
+  }
+  10% {
+    transform: scale(1.15, 1.15) translate(0, 0)
+  }
+  30% {
+    transform: scale(.95, .95) translate(0, 0)
+  }
+  //40% {
+  //  transform: scale(1.05, 1.05) translate(0, 0)
+  //}
+}
+
+@keyframes hover-scale-small {
+  0%, 50%, 70% {
+    transform: scale(1, 1) translate(0, 0)
+  }
+  10% {
+    transform: scale(1.01, 1.01) translate(0, 0)
+  }
+  30% {
+    transform: scale(.99, .99) translate(0, 0)
+  }
+  //40% {
+  //  transform: scale(1.05, 1.05) translate(0, 0)
+  //}
+}
+
+
+@keyframes pin-fall {
+  0%{
+    opacity:0;
+    transform:translateY(-40%);
+  }
+  30%{
+    opacity:1;
+    transform:translateY(0%);
+  }
+  50%{
+    opacity:1;
+    transform:translateY(-15%);
+  }
+  60%{
+    opacity:1;
+    transform:translateY(0%);
+  }
+  70%{
+    opacity:1;
+    transform:translateY(-7%);
+  }
+  75%{
+    opacity:1;
+    transform:translateY(0%);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0%);
+  }
+}
+
+
+@keyframes shadow-fall {
+  0%{
+    opacity:0;
+    transform:translateY(-15%) translateX(40%);
+  }
+  30%{
+    opacity:1;
+    transform:translateY(0) translateX(0%);
+  }
+  50%{
+    opacity:1;
+    transform:translateY(-5%) translateX(15%);
+  }
+  60%{
+    opacity:1;
+    transform:translateY(0) translateX(0%);
+  }
+  70%{
+    opacity:1;
+    transform:translateY(-3%) translateX(7%);
+  }
+  75%{
+    opacity:1;
+    transform:translateY(0) translateX(0%);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0) translateX(0%);
+  }
+
+}
+
+
+
+
+
+/*********************************************************************
+ * Bounce系.
+ *********************************************************************/
+@keyframes bounce {
+  0%{
+    transform: translateY(0%);
+  }
+  40% {
+    transform: translateY(-20%);
+  }
+
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes bounce-shadow {
+  0%{
+    transform: translateX(0%) translateY(0%);
+  }
+  40% {
+    transform: translateX(20%) translateY(-10%);
+  }
+
+  70% {
+    transform: translateX(0%) translateY(0%);;
+  }
+  80% {
+    //transform: translateX(5%) translateY(-3%);
+    transform: translateX(0%) translateY(0%);;
+  }
+  100% {
+    transform: translateX(0%) translateY(0);
+  }
+
+}
+
+
+@keyframes bounce-cloud {
+  0%{
+    transform: translateX(50%) scale(1.05);
+  }
+  50% {
+    transform: translateX(50%) scale(1);
+  }
+  100% {
+    transform: translateX(50%) scale(1.05);
+  }
+
+}
+
+@keyframes bounce-arrow {
+  0%{
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes intro-logo-bounce {
+  0%{
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+
+}

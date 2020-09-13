@@ -1,0 +1,18 @@
+extends ./_modules/layout/_home
+
+block append config
+    - var page = pagelist['home'];
+
+block append head
+    link(rel="stylesheet" href=CSS_PATH + "home.css?r=1")
+
+block content
+
+    // wrapper
+    div#wrapper
+        div#map
+
+
+block append script
+    // -
+        script(src=JS_PATH + "home.js")

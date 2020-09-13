@@ -1,0 +1,49 @@
+@charset "utf-8";
+@import "./_modules/mixin";
+@import "./_modules/reset";
+
+body {
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+
+    @media all and (-ms-high-contrast: none) {
+        font-family: "メイリオ", Meiryo, sans-serif;
+    }
+
+    &.open-modal {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.pc {
+    @include mq-sp {
+        display:none!important;
+    }
+}
+
+.sp {
+    @include mq-pc {
+        display:none!important;
+    }
+}
+
+img.svg {
+    @include mq-sp {
+        width:100%;
+    }
+}
+
+
+/************************************************
+ * コンテンツラッパー.
+ ************************************************/
+div#wrapper {
+    position:relative;
+    width:100%;
+    min-width:1080px;
+    overflow: hidden;
+
+    @include mq-sp {
+        min-width: 100%;
+    }
+}

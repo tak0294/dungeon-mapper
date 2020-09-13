@@ -1,0 +1,65 @@
+meta(charset="UTF-8")
+title #{page.title}
+//- meta(name="viewport" content="width=device-width,user-scalable=yes")
+//- meta(name="format-detection" content="telephone=no")
+
+//- if page.keywords !== ''
+//- 	meta(name="keywords" content=page.keywords)
+
+if typeof page.description !== "undefined" && page.description !== ''
+	meta(name="description" content=page.description)
+
+if typeof page.og !== "undefined"
+	if typeof page.og.title !== "undefined" && page.og.title !== ''
+		meta(property="og:title" content=page.og.title)
+
+	if typeof page.og.description !== "undefined" && page.og.description !== ''
+		meta(property="og:description" content=page.og.description)
+
+	if typeof page.og.image !== "undefined" && page.og.image !== ''
+		meta(property="og:image" content=page.og.image)
+
+	if typeof page.og.image_width !== "undefined" && page.og.image_width !== ''
+		meta(property="og:image:width" content=page.og.image_width)
+
+	if typeof page.og.image_height !== "undefined" && page.og.image_height !== ''
+		meta(property="og:image:height" content=page.og.image_height)
+
+	if typeof page.og.type !== "undefined" && page.og.type !== ''
+		meta(property="og:type" content=page.og.type)
+
+	if typeof page.og.locale !== "undefined" && page.og.locale !== ''
+		meta(property="og:locale" content=page.og.locale)
+
+	if typeof page.og.siteName !== "undefined" && page.og.siteName !== ''
+		meta(property="og:site_name" content=page.og.siteName)
+
+	if typeof page.og.url !== "undefined" && page.og.url !== ''
+		meta(property="og:url" content=page.og.url)
+
+if typeof page.twitter !== "undefined"
+	if typeof page.twitter.title !== "undefined" && page.twitter.title !== ''
+		meta(name="twitter:title" content=page.twitter.title)
+
+	if typeof page.twitter.description !== "undefined" && page.twitter.description !== ''
+		meta(name="twitter:description" content=page.twitter.description)
+
+	if typeof page.twitter.image !== "undefined" && page.twitter.image !== ''
+		meta(name="twitter:image" content=page.twitter.image)
+
+	if typeof page.twitter.card !== "undefined" && page.twitter.card !== ''
+		meta(name="twitter:card" content=page.twitter.card)
+
+	if typeof page.twitter.site !== "undefined" && page.twitter.site !== ''
+		meta(name="twitter:site" content=page.twitter.site)
+
+	if typeof page.twitter.url !== "undefined" && page.twitter.url !== ''
+		meta(name="twitter:url" content=page.twitter.url)
+
+if typeof page.favicon !== "undefined" && page.favicon !== ''
+	link(rel="icon" type="image/vnd.microsoft.icon" href=page.favicon)
+
+script(src="//cdnjs.cloudflare.com/ajax/libs/pixi.js/5.2.4/pixi.js")
+script(src="//code.jquery.com/jquery-2.2.4.min.js")
+link(rel="stylesheet" href=CSS_PATH+"common.css")
+link(rel="shortcut icon" href=IMG_PATH + "common/icon/favicon.ico")

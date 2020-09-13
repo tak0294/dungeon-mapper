@@ -1,0 +1,61 @@
+- var ROOT_PATH = '/';
+- var IMG_PATH = ROOT_PATH + 'assets/img/';
+- var JS_PATH = ROOT_PATH + 'assets/js/';
+- var CSS_PATH = ROOT_PATH + 'assets/css/';
+
+//- -------------------------------------------------------------------------
+//- ページごとのMETA設定値.
+//- -------------------------------------------------------------------------
+-
+    // デフォルトのOG画像URL
+    var default_og_url = 'https://';
+
+    // ページ別METAリスト
+    var pagelist = {
+
+        //- defaultをコピーして各ページの設定を作る.
+        default : {
+            title: '',
+            keywords: '',
+            og: {
+                title: 'デフォルトのOGタイトル',
+                description: 'デフォルトのOG description',
+                image: default_og_url,
+                image_width: 1200,
+                image_height: 630,
+                type: 'website',
+                siteName: '',
+                url: 'https://'
+            },
+            twitter: {
+                title: 'デフォルトのTwitter タイトル',
+                description: 'デフォルトのTwitter description',
+                image:default_og_url,
+                card: 'summary',
+                site: 'https://',
+            }
+        },
+
+        'home' : {
+            title: 'テストページ',
+            og: {
+                title: 'テストページ',
+                description: 'テストページ',
+                image: default_og_url,
+                image_width: 1200,
+                image_height: 630,
+                type: 'website',
+                siteName: 'テストページ',
+                url: 'https://'
+            },
+            twitter: {
+                title: 'テストページ',
+                description: 'テストページ',
+                image:default_og_url,
+                card: 'summary',
+                site: 'https://',
+            }
+        },
+
+
+    }
